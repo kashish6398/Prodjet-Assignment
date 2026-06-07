@@ -75,7 +75,7 @@ function SuccessScreen({
         <div className="w-full bg-white border border-slate-100 shadow-[0_12px_35px_rgba(92,53,205,0.04)] rounded-[22px] p-6 text-center mt-5 select-none relative overflow-hidden">
           
           {/* Top gradient accent border */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-primary to-indigo-400"></div>
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-brand-primary to-indigo-400"></div>
 
           {/* Dotted cut notches on the sides */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3.5 w-5.5 h-5.5 bg-white border border-slate-100 rounded-full z-10 shadow-inner"></div>

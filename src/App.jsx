@@ -2,7 +2,6 @@ import { useState } from "react";
 import UserTypeSelection from "./components/UserTypeSelection";
 import DynamicForm from "./components/DynamicForm";
 import SuccessScreen from "./components/SuccessScreen";
-import "./App.css";
 
 function App() {
   const [step, setStep] = useState(1);
@@ -30,14 +29,14 @@ function App() {
     <div className="relative min-h-screen bg-[#F8FAFC] flex items-center justify-center p-0 md:py-10 md:px-4 overflow-y-auto select-none font-sans">
       
       {/* Premium Light Theme Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F0_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F0_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none opacity-60"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F0_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F0_1px,transparent_1px)] bg-size-[32px_32px] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none opacity-60"></div>
       
       {/* Trendy Light-Mesh Gradient Blobs */}
       <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[55%] bg-indigo-200/30 rounded-full blur-[130px] pointer-events-none"></div>
       <div className="absolute bottom-[-10%] left-[-10%] w-[55%] h-[50%] bg-purple-200/35 rounded-full blur-[130px] pointer-events-none"></div>
 
       {/* iPhone Smartphone Frame Container */}
-      <div className="w-full min-h-screen md:w-[375px] md:h-[740px] md:min-h-0 bg-white rounded-none md:rounded-[48px] md:border-[10px] md:border-slate-900 shadow-none md:shadow-[0_25px_60px_-15px_rgba(92,53,205,0.06),0_15px_30px_rgba(15,23,42,0.04)] relative overflow-hidden flex flex-col shrink-0 transition-all duration-300">
+      <div className="w-full min-h-screen md:w-[375px] md:h-[740px] md:min-h-0 bg-white rounded-none md:rounded-[48px] md:border-10 md:border-slate-900 shadow-none md:shadow-[0_25px_60px_-15px_rgba(92,53,205,0.06),0_15px_30px_rgba(15,23,42,0.04)] relative overflow-hidden flex flex-col shrink-0 transition-all duration-300">
         
         {/* Modern Dynamic Island Notch */}
         <div className="hidden md:flex absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-6 bg-slate-950 rounded-full z-50 items-center justify-end px-3">
