@@ -40,7 +40,7 @@ function SuccessScreen({
   };
 
   return (
-    <div className="flex-1 flex flex-col justify-between pt-6 h-full text-center">
+    <div className="flex-1 flex flex-col justify-between pt-6 h-full text-center overflow-y-auto scrollbar-none">
       <div className="flex flex-col items-center">
         {/* Circle Check Badge (Screen 3) */}
         <div className="w-16 h-16 bg-[#eafaf1] rounded-full flex items-center justify-center text-[#10b981] mb-5 border border-emerald-100 shadow-[0_4px_12px_rgba(16,185,129,0.1)]">
@@ -57,8 +57,13 @@ function SuccessScreen({
           You are on the PRODJET waitlist.
         </p>
 
-        {/* Boarding Waitlist Card (Screen 3) */}
-        <div className="w-full bg-white border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.03)] rounded-[22px] p-6 text-center mt-6 select-none relative overflow-hidden">
+        {/* Boarding Waitlist Card (Screen 3) with physical notch cuts */}
+        <div className="w-full bg-white border border-slate-100 shadow-[0_10px_35px_rgba(0,0,0,0.03)] rounded-[22px] p-6 text-center mt-6 select-none relative overflow-hidden">
+          
+          {/* Dotted cut notches on the sides */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 w-5 h-5 bg-white border border-slate-100 rounded-full z-10 shadow-inner"></div>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-5 h-5 bg-white border border-slate-100 rounded-full z-10 shadow-inner"></div>
+
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">
             Waitlist Number
           </span>
@@ -66,12 +71,12 @@ function SuccessScreen({
             #757
           </span>
 
-          <div className="w-full border-t border-slate-100 mb-5"></div>
+          <div className="w-full border-t border-dashed border-slate-200 mb-5"></div>
 
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">
             Referral Code
           </span>
-          <span className="text-3xl font-extrabold text-brand-primary tracking-tight block mb-4 uppercase">
+          <span className="text-3xl font-extrabold text-brand-primary tracking-tight block mb-5 uppercase">
             {referralCode}
           </span>
 
@@ -91,6 +96,13 @@ function SuccessScreen({
               {copied ? "Copied!" : "Copy Link"}
             </span>
           </button>
+
+          {/* Simulated Ticket Barcode for realism */}
+          <div className="flex items-center justify-center gap-0.75 mt-6 h-8 opacity-65 px-4">
+            {[1.5, 3.5, 1, 2, 4.5, 1, 2.5, 3.5, 1, 2, 1.5, 3.5, 1, 4.5, 1.5, 2.5, 1, 3.5].map((w, i) => (
+              <div key={i} className="h-full bg-slate-900 rounded-xs" style={{ width: `${w}px` }} />
+            ))}
+          </div>
         </div>
 
         {/* Refer Friends Message (Screen 3) */}
@@ -106,7 +118,7 @@ function SuccessScreen({
       </div>
 
       {/* Action Button */}
-      <div className="mt-8">
+      <div className="mt-8 shrink-0">
         <button
           onClick={handleGoToHome}
           className="w-full bg-brand-primary hover:bg-brand-primary-hover text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5 shadow-[0_4px_16px_rgba(92,53,205,0.2)] active:scale-[0.98]"

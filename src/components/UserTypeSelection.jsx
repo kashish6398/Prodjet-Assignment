@@ -18,7 +18,7 @@ function UserTypeSelection({ userType, setUserType, setStep }) {
       title: "Student",
       subtitle: "Join as a student",
       themeClass: "border-brand-primary bg-indigo-50/15 shadow-[0_0_0_1px_#5c35cd]",
-      normalClass: "border-slate-200/80 bg-white hover:border-slate-300",
+      normalClass: "border-slate-200/80 bg-white hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(15,23,42,0.03)]",
       iconBg: "bg-[#f5f3ff] text-brand-primary",
       activeIconBg: "bg-brand-primary text-white",
       icon: (
@@ -33,7 +33,7 @@ function UserTypeSelection({ userType, setUserType, setStep }) {
       title: "Brand",
       subtitle: "Join as a brand",
       themeClass: "border-brand-primary bg-indigo-50/15 shadow-[0_0_0_1px_#5c35cd]",
-      normalClass: "border-slate-200/80 bg-white hover:border-slate-300",
+      normalClass: "border-slate-200/80 bg-white hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(15,23,42,0.03)]",
       iconBg: "bg-slate-100 text-slate-600",
       activeIconBg: "bg-brand-primary text-white",
       icon: (
@@ -47,7 +47,7 @@ function UserTypeSelection({ userType, setUserType, setStep }) {
       title: "College",
       subtitle: "Join as a college",
       themeClass: "border-brand-primary bg-indigo-50/15 shadow-[0_0_0_1px_#5c35cd]",
-      normalClass: "border-slate-200/80 bg-white hover:border-slate-300",
+      normalClass: "border-slate-200/80 bg-white hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(15,23,42,0.03)]",
       iconBg: "bg-emerald-50 text-emerald-600",
       activeIconBg: "bg-brand-primary text-white",
       icon: (
@@ -94,11 +94,11 @@ function UserTypeSelection({ userType, setUserType, setStep }) {
                   setUserType(opt.id);
                   setError("");
                 }}
-                className={`w-full flex items-center p-4 rounded-2xl border text-left transition-all duration-200 cursor-pointer ${
-                  isSelected ? opt.themeClass : opt.normalClass
+                className={`w-full flex items-center p-4.5 rounded-2xl border text-left transition-all duration-300 transform cursor-pointer ${
+                  isSelected ? opt.themeClass + " scale-[1.02] shadow-[0_8px_25px_rgba(92,53,205,0.08)]" : opt.normalClass
                 }`}
               >
-                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mr-4 shrink-0 transition-colors duration-200 ${
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mr-4 shrink-0 transition-colors duration-300 ${
                   isSelected ? opt.activeIconBg : opt.iconBg
                 }`}>
                   {opt.icon}
@@ -129,7 +129,7 @@ function UserTypeSelection({ userType, setUserType, setStep }) {
 
         <button
           onClick={handleContinue}
-          className="w-full bg-brand-primary hover:bg-brand-primary-hover text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5 shadow-[0_4px_16px_rgba(92,53,205,0.2)] active:scale-[0.98]"
+          className="w-full bg-brand-primary hover:bg-brand-primary-hover text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 cursor-pointer flex items-center justify-center gap-1.5 shadow-[0_4px_16px_rgba(92,53,205,0.2)] hover:shadow-[0_6px_22px_rgba(92,53,205,0.3)] active:scale-[0.98] active:translate-y-0"
         >
           <span>Continue</span>
         </button>
