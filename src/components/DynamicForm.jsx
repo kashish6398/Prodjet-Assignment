@@ -87,7 +87,7 @@ function DynamicForm({
   };
 
   const getInputClassName = (fieldName) => {
-    const baseClass = "w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white transition-all duration-200";
+    const baseClass = "w-full bg-[#f8fafc] border rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white transition-all duration-200";
     if (errors[fieldName]) {
       return `${baseClass} border-rose-500 focus:border-rose-500 focus:ring-1 focus:ring-rose-500/20`;
     }
@@ -119,27 +119,27 @@ function DynamicForm({
         <div className="flex justify-center items-center mb-6">
           <div className="flex items-center gap-1.5">
             {/* Dot 1 */}
-            <div className="w-2.5 h-2.5 rounded-full bg-brand-primary"></div>
+            <div className="w-2 h-2 rounded-full bg-brand-primary"></div>
             {/* Line 1 */}
-            <div className="w-8 h-[2px] bg-brand-primary rounded-full"></div>
+            <div className="w-6 h-[2px] bg-brand-primary rounded-full"></div>
             {/* Dot 2 */}
-            <div className="w-2.5 h-2.5 rounded-full bg-brand-primary ring-4 ring-brand-primary/25"></div>
+            <div className="w-2 h-2 rounded-full bg-brand-primary ring-4 ring-brand-primary/25"></div>
             {/* Line 2 */}
-            <div className="w-8 h-[2px] bg-slate-200 rounded-full"></div>
+            <div className="w-6 h-[2px] bg-slate-200 rounded-full"></div>
             {/* Dot 3 */}
-            <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
+            <div className="w-2 h-2 rounded-full bg-slate-200"></div>
             {/* Line 3 */}
-            <div className="w-8 h-[2px] bg-slate-200 rounded-full"></div>
+            <div className="w-6 h-[2px] bg-slate-200 rounded-full"></div>
             {/* Dot 4 */}
-            <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
+            <div className="w-2 h-2 rounded-full bg-slate-200"></div>
           </div>
         </div>
 
         {/* Titles */}
-        <h2 className="text-xl font-extrabold text-slate-900 tracking-tight leading-none">
-          {userType.charAt(0).toUpperCase() + userType.slice(1)} Details
+        <h2 className="text-xl font-extrabold text-slate-900 tracking-tight leading-none text-left">
+          {userType === "student" ? "Student Details" : userType === "brand" ? "Brand Details" : "College Details"}
         </h2>
-        <p className="text-slate-400 text-xs mt-1 mb-6 font-medium">
+        <p className="text-slate-400 text-xs mt-1 mb-6 font-medium text-left">
           Please fill in your details
         </p>
 
@@ -147,8 +147,8 @@ function DynamicForm({
         <form onSubmit={handleSubmit} className="space-y-4">
           
           {/* Common Fields */}
-          <div>
-            <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+          <div className="text-left">
+            <label className="text-xs font-semibold text-slate-500 mb-1 block">
               Full Name
             </label>
             <input
@@ -164,8 +164,8 @@ function DynamicForm({
             )}
           </div>
 
-          <div>
-            <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+          <div className="text-left">
+            <label className="text-xs font-semibold text-slate-500 mb-1 block">
               Email
             </label>
             <input
@@ -181,8 +181,8 @@ function DynamicForm({
             )}
           </div>
 
-          <div>
-            <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+          <div className="text-left">
+            <label className="text-xs font-semibold text-slate-500 mb-1 block">
               Phone Number
             </label>
             <input
@@ -201,8 +201,8 @@ function DynamicForm({
           {/* Student Fields */}
           {userType === "student" && (
             <>
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   College Name
                 </label>
                 <input
@@ -218,8 +218,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   Course / Degree
                 </label>
                 <div className="relative">
@@ -237,7 +237,7 @@ function DynamicForm({
                     <option value="MBA / BBA">MBA / BBA</option>
                     <option value="Other Degree">Other Degree</option>
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -248,8 +248,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   Graduation Year
                 </label>
                 <div className="relative">
@@ -268,7 +268,7 @@ function DynamicForm({
                     <option value="2029">2029</option>
                     <option value="2030">2030</option>
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -279,8 +279,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   City
                 </label>
                 <input
@@ -301,8 +301,8 @@ function DynamicForm({
           {/* Brand Fields */}
           {userType === "brand" && (
             <>
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   Brand Name
                 </label>
                 <input
@@ -318,8 +318,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   Industry
                 </label>
                 <div className="relative">
@@ -338,7 +338,7 @@ function DynamicForm({
                     <option value="Marketing / Creator">Marketing / Creator</option>
                     <option value="Other">Other</option>
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -349,8 +349,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   Company Size
                 </label>
                 <div className="relative">
@@ -367,7 +367,7 @@ function DynamicForm({
                     <option value="201-500">201-500 Employees</option>
                     <option value="500+">500+ Employees</option>
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -378,8 +378,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   Website URL
                 </label>
                 <input
@@ -395,8 +395,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   Contact Person Name
                 </label>
                 <input
@@ -417,8 +417,8 @@ function DynamicForm({
           {/* College Fields */}
           {userType === "college" && (
             <>
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   College Name
                 </label>
                 <input
@@ -434,8 +434,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   Your Designation
                 </label>
                 <input
@@ -451,8 +451,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   Approx. Number of Students
                 </label>
                 <div className="relative">
@@ -468,7 +468,7 @@ function DynamicForm({
                     <option value="2001-5000">2001-5000 Students</option>
                     <option value="5000+">5000+ Students</option>
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -479,8 +479,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   City
                 </label>
                 <input
@@ -496,8 +496,8 @@ function DynamicForm({
                 )}
               </div>
 
-              <div>
-                <label className="text-[11px] font-semibold text-slate-500 mb-1.5 block">
+              <div className="text-left">
+                <label className="text-xs font-semibold text-slate-500 mb-1 block">
                   Official College Email
                 </label>
                 <input
@@ -518,7 +518,7 @@ function DynamicForm({
           <div className="pt-6">
             <button
               type="submit"
-              className="w-full bg-brand-primary hover:bg-brand-primary-hover text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 cursor-pointer flex items-center justify-center shadow-[0_4px_16px_rgba(92,53,205,0.25)] hover:shadow-[0_6px_20px_rgba(92,53,205,0.35)] active:scale-[0.98]"
+              className="w-full bg-brand-primary hover:bg-brand-primary-hover text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 cursor-pointer flex items-center justify-center shadow-[0_4px_16px_rgba(92,53,205,0.2)] active:scale-[0.98]"
             >
               <span>Submit</span>
             </button>

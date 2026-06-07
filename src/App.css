@@ -3,17 +3,17 @@
     transform: scale(1) translate(0px, 0px);
   }
   33% {
-    transform: scale(1.1) translate(30px, -50px);
+    transform: scale(1.05) translate(20px, -30px);
   }
   66% {
-    transform: scale(0.9) translate(-20px, 20px);
+    transform: scale(0.95) translate(-15px, 15px);
   }
 }
 
 .animate-pulse-slow {
-  animation: pulse-slow 15s infinite ease-in-out;
+  animation: pulse-slow 12s infinite ease-in-out;
 }
 
 .animate-pulse-slow-reverse {
-  animation: pulse-slow 20s infinite ease-in-out reverse;
+  animation: pulse-slow 16s infinite ease-in-out reverse;
 }

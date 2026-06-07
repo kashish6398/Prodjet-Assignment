@@ -43,14 +43,14 @@ function SuccessScreen({
     <div className="flex-1 flex flex-col justify-between pt-6 h-full text-center">
       <div className="flex flex-col items-center">
         {/* Circle Check Badge (Screen 3) */}
-        <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 mb-5 border border-emerald-100 shadow-[0_4px_12px_rgba(16,185,129,0.1)]">
+        <div className="w-16 h-16 bg-[#eafaf1] rounded-full flex items-center justify-center text-[#10b981] mb-5 border border-emerald-100 shadow-[0_4px_12px_rgba(16,185,129,0.1)]">
           <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
 
         {/* Text Headers */}
-        <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight leading-none mb-2">
+        <h1 className="text-[25px] font-extrabold text-slate-900 tracking-tight leading-none mb-2.5">
           Registration Complete!
         </h1>
         <p className="text-slate-500 text-sm font-medium">
@@ -94,7 +94,7 @@ function SuccessScreen({
         </div>
 
         {/* Refer Friends Message (Screen 3) */}
-        <div className="flex items-center justify-center gap-2 mt-6 px-4 py-2 bg-indigo-50/30 rounded-full border border-indigo-50/10">
+        <div className="flex items-center justify-center gap-2 mt-6 px-4 py-2 bg-[#f5f3ff] rounded-full border border-indigo-50/10">
           {/* Share/Referral SVG Icon */}
           <svg className="w-4 h-4 text-brand-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -109,7 +109,7 @@ function SuccessScreen({
       <div className="mt-8">
         <button
           onClick={handleGoToHome}
-          className="w-full bg-brand-primary hover:bg-brand-primary-hover text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5 shadow-[0_4px_16px_rgba(92,53,205,0.25)] hover:shadow-[0_6px_20px_rgba(92,53,205,0.35)] active:scale-[0.98]"
+          className="w-full bg-brand-primary hover:bg-brand-primary-hover text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5 shadow-[0_4px_16px_rgba(92,53,205,0.2)] active:scale-[0.98]"
         >
           <span>Go to Home</span>
         </button>
