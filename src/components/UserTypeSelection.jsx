@@ -18,7 +18,7 @@ function UserTypeSelection({ userType, setUserType, setStep }) {
       title: "Student",
       subtitle: "Join as a student",
       themeClass: "border-brand-primary bg-indigo-50/15 shadow-[0_0_0_1px_#5c35cd]",
-      normalClass: "border-slate-200/80 bg-white hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(15,23,42,0.03)]",
+      normalClass: "border-slate-200/80 bg-white hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(15,23,42,0.03)]",
       iconBg: "bg-[#f5f3ff] text-brand-primary",
       activeIconBg: "bg-brand-primary text-white",
       icon: (
@@ -33,7 +33,7 @@ function UserTypeSelection({ userType, setUserType, setStep }) {
       title: "Brand",
       subtitle: "Join as a brand",
       themeClass: "border-brand-primary bg-indigo-50/15 shadow-[0_0_0_1px_#5c35cd]",
-      normalClass: "border-slate-200/80 bg-white hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(15,23,42,0.03)]",
+      normalClass: "border-slate-200/80 bg-white hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(15,23,42,0.03)]",
       iconBg: "bg-slate-100 text-slate-600",
       activeIconBg: "bg-brand-primary text-white",
       icon: (
@@ -47,7 +47,7 @@ function UserTypeSelection({ userType, setUserType, setStep }) {
       title: "College",
       subtitle: "Join as a college",
       themeClass: "border-brand-primary bg-indigo-50/15 shadow-[0_0_0_1px_#5c35cd]",
-      normalClass: "border-slate-200/80 bg-white hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(15,23,42,0.03)]",
+      normalClass: "border-slate-200/80 bg-white hover:border-slate-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(15,23,42,0.03)]",
       iconBg: "bg-emerald-50 text-emerald-600",
       activeIconBg: "bg-brand-primary text-white",
       icon: (
@@ -62,10 +62,16 @@ function UserTypeSelection({ userType, setUserType, setStep }) {
     <div className="flex-1 flex flex-col justify-between pt-3 h-full">
       <div>
         {/* Brand Header */}
-        <div className="flex items-center justify-center mb-6 select-none h-8">
+        <div className="flex items-center justify-between mb-4 select-none h-8">
+          <div className="w-8"></div>
           <span className="font-extrabold text-base tracking-wider uppercase text-slate-900">
             PRODJET
           </span>
+          <div className="shrink-0">
+            <span className="text-[10px] font-bold text-brand-primary bg-indigo-50/60 border border-indigo-100/80 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              Step 1 of 3
+            </span>
+          </div>
         </div>
 
         {/* Dynamic Titles */}
@@ -94,22 +100,29 @@ function UserTypeSelection({ userType, setUserType, setStep }) {
                   setUserType(opt.id);
                   setError("");
                 }}
-                className={`w-full flex items-center p-4.5 rounded-2xl border text-left transition-all duration-300 transform cursor-pointer ${
-                  isSelected ? opt.themeClass + " scale-[1.02] shadow-[0_8px_25px_rgba(92,53,205,0.08)]" : opt.normalClass
+                className={`w-full flex items-center p-4 rounded-2xl border text-left transition-all duration-300 transform cursor-pointer group ${
+                  isSelected ? opt.themeClass + " scale-[1.02] shadow-[0_8px_25px_rgba(92,53,205,0.06)]" : opt.normalClass
                 }`}
               >
-                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mr-4 shrink-0 transition-colors duration-300 ${
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mr-4 shrink-0 transition-colors duration-200 ${
                   isSelected ? opt.activeIconBg : opt.iconBg
                 }`}>
                   {opt.icon}
                 </div>
-                <div>
+                <div className="flex-1">
                   <span className="font-bold text-slate-900 text-sm block">
                     {opt.title}
                   </span>
                   <span className="text-[11px] text-slate-500 block mt-0.5 font-medium">
                     {opt.subtitle}
                   </span>
+                </div>
+
+                {/* Micro-interaction Chevron Arrow */}
+                <div className="ml-2 shrink-0 text-slate-400 group-hover:text-brand-primary transform group-hover:translate-x-1 transition-all duration-200">
+                  <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
               </button>
             );
